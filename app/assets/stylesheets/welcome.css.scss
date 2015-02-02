@@ -1,0 +1,26 @@
+.social-btn{
+  position: relative;
+  margin-left: 180px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  background: #29b5ff;
+  font-family: Helvetica;
+  text-align: center;
+  color: white;
+}
+
+.social-btn:hover{
+  text-decoration: none;
+  color: white;
+  background: #1da2e5;
+}
+
+.social-btn:visited{
+  text-decoration: none;
+  color: white;
+}
+
+#created-by{
+  position: absolute;
+}
