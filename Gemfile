@@ -31,6 +31,9 @@ gem 'jquery-rails'
 # Faker gem to generate fake data
 gem 'faker'
 
+# Devise gem to allow user authentication
+gem 'devise'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
