@@ -37,6 +37,9 @@ gem 'devise'
 # Figaro gem to store sensitive information as environment variables
 gem 'figaro', '1.0'
 
+# Pundit gem to take care of the authorization
+gem 'pundit'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
