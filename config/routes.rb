@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :topics do 
-    resources :posts, except: [:index]
+    resources :posts do #except: [:index]
+      resources :summaries
+    end
   end
-
+  
   get 'about' => 'welcome#about'
 
   root to: 'welcome#index'

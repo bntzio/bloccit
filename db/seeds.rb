@@ -36,11 +36,20 @@ users = User.all
   Post.create!(
     user: users.sample,
     topic: topics.sample,
+    # summary: summaries.sample,
     title: Faker::Lorem.sentence,
     body: Faker::Lorem.paragraph
     )
 end
 posts = Post.all
+
+# Create Summaries
+# 50.times do
+#   Summary.create!(
+#     description: Faker::Lorem.paragraph
+#     )
+# end
+# summaries = Summary.all
 
 # Create Comments
 100.times do
