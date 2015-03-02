@@ -10,7 +10,7 @@
     </ul>
   </div>
   <div class="col-md-8">
-    <%= form_for @summary, url: new_topic_post_summary_path do |f| %>
+    <%= form_for [@topic, @post, @summary] do |f| %>
       <div class="form-group">
         <%= f.text_field :description, class: 'form-control', placeholder: "Enter your summary" %>
       </div>
