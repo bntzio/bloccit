@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   
   resources :topics do 
-    resources :posts do #except: [:index]
-      resources :summaries
+    resources :posts, except: [:index] do
+      resource :summary
     end
   end
   
