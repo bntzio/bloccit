@@ -44,6 +44,13 @@ gem 'pundit'
 # Redcarpet gem to post markdown
 gem 'redcarpet'
 
+# Carrierwave and mini_magick gems to manipulate images as well as uploading them
+gem 'carrierwave'
+gem 'mini_magick'
+
+# Fog gem to make uploading to S3 easier, Fog is known as a "cloud services library", we'll use S3 for storing uploaded files
+gem 'fog'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
