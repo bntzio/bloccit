@@ -12,9 +12,14 @@
     <hr/>
     <h4>Summary of<%= @post.markdown_title %></h4>
     <% if @post.summary %>
-    <p><i><%= @post.summary.description %></i></p>
-    <% else %>
-    <p><i><%= link_to "Add a Summary to your Post", new_topic_post_summary_path(@topic, @post, @summary) %></i></p>
+      <p><i><%= @post.summary.description %></i></p>
+    <% end %>
+    <% if policy(@post).create? %>
+      <% if @post.summary %>
+      <p><i><%= @post.summary.description %></i></p>
+      <% else %>
+      <p><i><%= link_to "Add a Summary to your Post", new_topic_post_summary_path(@topic, @post, @summary) %></i></p>
+      <% end %>
     <% end %>
   </div>
   <div class="col-md-4">

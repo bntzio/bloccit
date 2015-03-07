@@ -11,7 +11,7 @@ require 'faker'
 
 
 # Create Users
-5.times do
+10.times do
   user = User.new(
     name: Faker::Name.name,
     email: Faker::Internet.email,
@@ -23,7 +23,7 @@ end
 users = User.all
 
 # Create Topics
- 15.times do
+ 50.times do
    Topic.create!(
      name:         Faker::Lorem.sentence,
      description:  Faker::Lorem.paragraph
@@ -32,7 +32,7 @@ users = User.all
  topics = Topic.all
 
 # Create Posts
-50.times do
+700.times do
   Post.create!(
     user: users.sample,
     topic: topics.sample,
@@ -52,7 +52,7 @@ posts = Post.all
 # summaries = Summary.all
 
 # Create Comments
-100.times do
+150.times do
   Comment.create!(
     # user: users.sample,  # we have not yet associated Users with Comments
     post: posts.sample,
@@ -92,5 +92,6 @@ end
 
 puts "Seed finished"
 puts "#{User.count} users created"
+puts "#{Topic.count} topics created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"

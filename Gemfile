@@ -51,6 +51,9 @@ gem 'mini_magick'
 # Fog gem to make uploading to S3 easier, Fog is known as a "cloud services library", we'll use S3 for storing uploaded files
 gem 'fog'
 
+# will_paginate gem to add pagination
+gem 'will_paginate', '~> 3.0.5'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
