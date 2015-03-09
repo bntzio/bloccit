@@ -5,7 +5,7 @@ class SummaryPolicy < ApplicationPolicy
   end
 
   def create?
-    user.present?
+    user.present? && (record.user == user || user.admin? || user.moderator?)
   end
 
   def update?

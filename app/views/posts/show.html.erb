@@ -14,7 +14,7 @@
     <% if @post.summary %>
       <p><i><%= @post.summary.description %></i></p>
     <% end %>
-    <% if policy(@post).create? && !@post.summary %>
+    <% if policy(@post).edit? && !@post.summary %>
       <p><i><%= link_to "Add a Summary to your Post", new_topic_post_summary_path(@topic, @post, @summary) %></i></p>
     <% end %>
   </div>
@@ -27,6 +27,11 @@
         <% else %>
           <%= link_to "New Summary", new_topic_post_summary_path(@topic, @post, @summary), class: 'btn btn-success' %>
         <% end %>
+
+    <% if policy(@post).destroy? %>
+       <%= link_to "Delete Post", [@topic, @post], method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this post?' } %>
+     <% end %>
+
     <% end %>
   </div>
 </div>
