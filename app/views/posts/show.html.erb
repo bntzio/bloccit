@@ -14,14 +14,11 @@
     <% if @post.summary %>
       <p><i><%= @post.summary.description %></i></p>
     <% end %>
-    <% if policy(@post).create? %>
-      <% if @post.summary %>
-      <p><i><%= @post.summary.description %></i></p>
-      <% else %>
+    <% if policy(@post).create? && !@post.summary %>
       <p><i><%= link_to "Add a Summary to your Post", new_topic_post_summary_path(@topic, @post, @summary) %></i></p>
-      <% end %>
     <% end %>
   </div>
+
   <div class="col-md-4">
     <% if policy(@post).edit? %>
       <%= link_to "Edit Post", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
@@ -31,5 +28,13 @@
           <%= link_to "New Summary", new_topic_post_summary_path(@topic, @post, @summary), class: 'btn btn-success' %>
         <% end %>
     <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <h2>Comments</h2>
+  <div class='col-md-12'>
+    <%= render @comments %>
+    <%= render 'comments/form', topic: @topic, comment: @comment, post: @post %>
   </div>
 </div>
