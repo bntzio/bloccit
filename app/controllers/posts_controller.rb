@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @topic = Topic.find(params[:topic_id])
-    @comment = @post.comments.build
+    @comment = Comment.new
     @comments = @post.comments
   end
 
