@@ -2,21 +2,14 @@
 
 <div class="row">
   <div class="col-md-4">
-    <p>Guidelines for summary</p>
+    <p>Guidelines for summaries:</p>
     <ul>
-      <li>Make sure it rhymes.</li>
-      <li>Don't use the letter "A".</li>
-      <li>The incessant use of hashtags will get you banned.</li>
+      <li>Make sure the topic is appropiate.</li>
+      <li>Never insult dogs.</li>
+      <li>Smile when you type.</li>
     </ul>
   </div>
   <div class="col-md-8">
-    <%= form_for [@topic, @post, @summary] do |f| %>
-      <div class="form-group">
-        <%= f.text_field :description, class: 'form-control', placeholder: "Enter your summary" %>
-      </div>
-      <div class="form-group">
-        <%= f.submit "Save", class: 'btn btn-success' %>
-      </div>
-    <% end %>
+    <%= render partial: 'form', locals: { post: @post, summary: @summary } %>
   </div>
 </div>

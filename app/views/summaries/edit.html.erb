@@ -12,7 +12,7 @@
   <div class="col-md-8">
     <%= form_for [@topic, @post, @summary] do |f| %>
       <div class="form-group">
-        <%= f.text_area :description, rows: 8, class: 'form-control', placeholder: "Enter your summary" %>
+        <%= f.text_area :description, rows: 2, class: 'form-control', placeholder: "Enter your summary" %>
       </div>
       <div class="form-group">
         <%= f.submit "Save", class: 'btn btn-success' %>

@@ -15,7 +15,7 @@
       <p><i><%= @post.summary.description %></i></p>
     <% end %>
     <% if policy(@post).edit? && !@summary %>
-      <p><i><%= link_to "Add a Summary to your Post", new_topic_post_summary_path(@topic, @post, @summary) %></i></p>
+      <p><i><%= link_to "Add a Summary to your Post", new_post_summary_path(@post, @summary) %></i></p>
     <% end %>
   </div>
 
@@ -23,9 +23,9 @@
     <% if policy(@post).edit? %>
       <%= link_to "Edit Post", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
         <% if @post.summary %>
-          <%= link_to "Edit Summary", edit_topic_post_summary_path(@topic, @post, @summary) , class: 'btn btn-success' %>
+          <%= link_to "Edit Summary", edit_post_summary_path(@post, @summary) , class: 'btn btn-success' %>
         <% else %>
-          <%= link_to "New Summary", new_topic_post_summary_path(@topic, @post, @summary), class: 'btn btn-success' %>
+          <%= link_to "New Summary", new_post_summary_path(@post, @summary), class: 'btn btn-success' %>
         <% end %>
     <% end %>
     <% if policy(@post).destroy? %>

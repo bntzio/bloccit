@@ -1,0 +1,19 @@
+<%= form_for(summary, url: post_summary_path) do |f| %>
+  <% if summary.errors.any? %>
+     <div class="alert alert-danger">
+       <h4>There are <%= pluralize(summary.errors.count, "error") %>.</h4>
+       <ul>
+          <% summary.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+       </ul>
+     </div>
+  <% end %>
+   <%= form_group_tag(summary.errors[:description]) do %>
+     <%= f.label :description %>
+     <%= f.text_area :description, rows: 2, class: 'form-control', placeholder: "Enter summary description" %>
+   <% end %>
+   <div class="form-group">
+     <%= f.submit "Save", class: 'btn btn-success' %>
+   </div>
+<% end %>
