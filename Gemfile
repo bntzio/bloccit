@@ -15,6 +15,10 @@ group :development do
   gem 'better_errors'
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
+
 gem 'bootstrap-sass'
 
 # Use SCSS for stylesheets
