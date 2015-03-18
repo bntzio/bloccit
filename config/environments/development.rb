@@ -40,5 +40,5 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   
   # Override Action Mailer's 'silent errors' in development
-  # config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = true
 end

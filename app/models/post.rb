@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :topic
   has_one :summary, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   mount_uploader :image, ImageUploader
 
