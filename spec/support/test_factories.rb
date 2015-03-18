@@ -11,6 +11,17 @@ module TestFactories
       Post.create(post_options)
     end
 
+    def other_post(options={})
+    post_options = {
+      title: 'Other post title',
+      body: 'Other post bodies must be pretty long.',
+      topic: Topic.create(name: 'Other topic name'),
+      user: authenticated_user
+      }.merge(options)
+    
+      Post.create(post_options)
+    end
+
     def authenticated_user(options={})
      user_options = {email: "email#{rand}@fake.com", password: 'password'}.merge(options)
      user = User.new(user_options)
@@ -18,6 +29,4 @@ module TestFactories
      user.save
      user
    end
-
-
 end
