@@ -29,4 +29,9 @@ module TestFactories
      user.save
      user
    end
+    
+    def comment_without_email
+      @comment = @user.comments.build(post: @post, body: "A Comment")
+      allow(@comment).to receive(:send_favorite_emails)
+    end
 end
