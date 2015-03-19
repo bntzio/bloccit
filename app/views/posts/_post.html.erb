@@ -6,10 +6,6 @@
         </h4>
         <%= image_tag(post.image.medium.url) if post.image? %>
         <small>
-            <% if post.summary %>
-              <i><%= post.summary.description %></i>
-              <br/>
-            <% end %>
             <% if post.image? %>
             submitted <%= time_ago_in_words(post.created_at) %> ago by <%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %> <%= post.user.name %>
             <% else %>
