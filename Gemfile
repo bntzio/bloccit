@@ -20,6 +20,10 @@ group :development, :test do
   gem 'capybara'
 end
 
+group :production, :development do
+  gem 'puma'
+end
+
 gem 'bootstrap-sass'
 
 # Use SCSS for stylesheets
