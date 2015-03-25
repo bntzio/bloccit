@@ -48,8 +48,12 @@
 <div class="row">
   <h2>Comments</h2>
   <div class='col-md-12'>
-    <%= render partial: 'comments/comment', collection: @comments %>
-    <%= render 'comments/form', topic: @topic, comment: @comment, post: @post %>
+    <div class='js-comments'>
+      <%= render partial: 'comments/comment', collection: @comments %>
+    </div>
+    <div class='new-comment'>
+      <%= render 'comments/form', topic: @topic, comment: @comment, post: @post %>
+    </div>
   </div>
 </div>
 <% end %>
